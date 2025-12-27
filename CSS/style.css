@@ -1,0 +1,601 @@
+/* ================= RESET & BASE ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100vh;
+}
+
+body {
+    background: #f4f6f8;
+    display: flex;
+    flex-direction: column;
+    color: #333;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+    background: #1e272e;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.logo {
+    color: #00cec9;
+    font-size: 22px;
+    font-weight: bold;
+    z-index: 1001;
+}
+
+/* NAV CONTAINER */
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* NAV LINKS */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #00cec9;
+}
+
+/* LOGIN / REGISTER */
+.nav-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.login-btn {
+    padding: 8px 18px;
+    border: 2px solid #00cec9;
+    border-radius: 20px;
+    color: #00cec9;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.login-btn:hover {
+    background: #00cec9;
+    color: #000;
+}
+
+.register-btn {
+    padding: 8px 18px;
+    background: #00cec9;
+    border-radius: 20px;
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.register-btn:hover {
+    background: #00b3ae;
+}
+
+/* HAMBURGER MENU TOGGLE */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    color: #00cec9;
+    cursor: pointer;
+    background: none;
+    border: none;
+    z-index: 1001;
+}
+
+/* ================= COMMON SECTION STYLES ================= */
+.section {
+    padding: 70px 20px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.section h1 {
+    font-size: 42px;
+    color: #1e272e;
+    margin-bottom: 20px;
+}
+
+.section h2 {
+    font-size: 36px;
+    color: #0984e3;
+    margin-bottom: 30px;
+}
+
+.section p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* ================= HERO SECTION (Home Page) ================= */
+.hero {
+    min-height: 90vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("../images/view.png") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 46px;
+    margin-bottom: 12px;
+    color: white;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 600px;
+    color: white;
+}
+
+/* ================= ABOUT PAGE STYLES ================= */
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.feature-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card h3 {
+    color: #00cec9;
+    margin-bottom: 15px;
+}
+
+/* ================= SERVICES PAGE STYLES ================= */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-card {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    border-color: #00cec9;
+    box-shadow: 0 10px 20px rgba(0,206,201,0.1);
+}
+
+.service-icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: #0984e3;
+}
+
+.service-card h3 {
+    color: #1e272e;
+    margin-bottom: 15px;
+}
+
+.price-tag {
+    display: inline-block;
+    background: #00cec9;
+    color: #000;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* ================= CONTACT PAGE STYLES ================= */
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.contact-info {
+    text-align: left;
+}
+
+.contact-details {
+    margin-top: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.contact-item i {
+    font-size: 24px;
+    color: #00cec9;
+    margin-right: 15px;
+    min-width: 30px;
+}
+
+/* Contact Form */
+.contact-form {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #1e272e;
+    font-weight: 600;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #00cec9;
+}
+
+textarea.form-control {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background: #0984e3;
+    color: white;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background: #00cec9;
+}
+
+/* ================= LOGIN & REGISTER PAGES ================= */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 40px 20px;
+}
+
+.auth-box {
+    background: white;
+    padding: 50px 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 450px;
+}
+
+.auth-box h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1e272e;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.auth-btn {
+    width: 100%;
+    padding: 14px;
+    background: #0984e3;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 10px;
+}
+
+.auth-btn:hover {
+    background: #00cec9;
+}
+
+.auth-links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.auth-links a {
+    color: #0984e3;
+    text-decoration: none;
+}
+
+.auth-links a:hover {
+    color: #00cec9;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+    background: #1e272e;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-about, .footer-social, .footer-contact {
+    flex: 1;
+    min-width: 250px;
+    padding: 15px;
+}
+
+.footer-about h2, .footer-social h3, .footer-contact h3 {
+    color: #00cec9;
+    margin-bottom: 15px;
+}
+
+.social-icons {
+    margin: 12px 0;
+}
+
+.social-icons a {
+    color: #00cec9;
+    margin: 0 8px;
+    text-decoration: none;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    .nav-container {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        height: 100vh;
+        background: #1e272e;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 80px;
+        transition: right 0.3s ease-in-out;
+        z-index: 1000;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .nav-container.active {
+        right: 0;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 0;
+    }
+    
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-links a {
+        display: block;
+        padding: 15px 20px;
+        width: 100%;
+    }
+    
+    .nav-buttons {
+        flex-direction: column;
+        width: 80%;
+        margin-top: 20px;
+    }
+    
+    .login-btn, .register-btn {
+        text-align: center;
+        margin: 5px 0;
+    }
+    
+    /* Section Responsive */
+    .section {
+        padding: 50px 20px;
+    }
+    
+    .section h1 {
+        font-size: 32px;
+    }
+    
+    .section h2 {
+        font-size: 28px;
+    }
+    
+    .hero h1 {
+        font-size: 32px;
+    }
+    
+    .hero p {
+        font-size: 16px;
+    }
+    
+    /* About Page */
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .about-text {
+        text-align: center;
+    }
+    
+    /* Contact Page */
+    .contact-form {
+        padding: 25px;
+    }
+    
+    /* Auth Pages */
+    .auth-box {
+        padding: 30px 25px;
+    }
+    
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 20px;
+    }
+    
+    .hero h1 {
+        font-size: 28px;
+    }
+    
+    .hero p {
+        font-size: 14px;
+    }
+    
+    .section h1 {
+        font-size: 28px;
+    }
+    
+    .section h2 {
+        font-size: 24px;
+    }
+    
+    .services {
+        grid-template-columns: 1fr;
+    }
+    
+    .features {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
